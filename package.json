@@ -36,5 +36,6 @@
   "bugs": {
     "url": "https://github.com/x566chen/SimpleButton/issues"
   },
-  "homepage": "https://github.com/x566chen/SimpleButton#readme"
+  "homepage": "https://github.com/x566chen/SimpleButton#readme",
+  "proxy": "http://localhost:3000"
 }

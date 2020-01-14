@@ -1,9 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
 import Buttons from './Buttons';
+import App from './App'
 import './main.css';
-if (module.hot) {
-  module.hot.accept();
-}
 
-render(<Buttons />, document.getElementById('root'));
+
+render(<App />, document.getElementById('root'));
+module.hot.accept();

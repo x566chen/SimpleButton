@@ -4,19 +4,19 @@ const PORT = 3000;
 let listName = ['a', 'b','c'];
 const cors = require('cors');
 
-var webpack = require('webpack'),
-    WebpackDevMiddleware = require('webpack-dev-middleware'),
-    WebpackHotMiddleware = require('webpack-hot-middleware')
-var webpackDevConfig = require('../webpack.config');
+// var webpack = require('webpack'),
+//     WebpackDevMiddleware = require('webpack-dev-middleware'),
+//     WebpackHotMiddleware = require('webpack-hot-middleware')
+// var webpackDevConfig = require('../webpack.config');
 
-var compiler = webpack(webpackDevConfig);
+//var compiler = webpack(webpackDevConfig);
 
 // attach to the compiler & the server
-app.use(WebpackDevMiddleware(compiler, {
-  publicPath: webpackDevConfig.output.publicPath,
-  stats: { colors: true }
-}))
-app.use(WebpackHotMiddleware(compiler))
+// app.use(WebpackDevMiddleware(compiler, {
+//   publicPath: webpackDevConfig.output.publicPath,
+//   stats: { colors: true }
+// }))
+// app.use(WebpackHotMiddleware(compiler))
 app.use(cors());
 app.use(express.json());
 
@@ -35,7 +35,7 @@ res.status(200).json({listName})
 });
 
 app.put('/elements/:id', (req, res) => {
-  listName.push(req.params.id);
+  listName[listName.indexOf(req.params.id)] = req.body.newElement;
   res.status(200).json({listName})
 });
 

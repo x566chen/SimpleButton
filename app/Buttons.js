@@ -7,9 +7,9 @@ function Buttons(){
     <div>
       <input ></input>
       <button onClick={handleClick} >Add</button>
-      <button onClick={handleClick} >Add</button>    
-      <button onClick={handleClick} >Add</button>
-      <button onClick={handleClick} >Add</button>     
+      <button onClick={handleClick} >Delete</button>    
+      <button onClick={handleClick} >Updata</button>
+   
     </div>
     
 
