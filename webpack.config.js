@@ -1,10 +1,18 @@
 var webpack = require('webpack')
+var path = require('path');
+
+var publicPath = 'http://localhost:3000/';
+
 module.exports = {
   devtool: 'eval-source-map',
-  entry:  __dirname + "/app/main.js",
+  entry: [
+    'webpack/hot/dev-server',
+    'webpack-hot-middleware/client',
+    './app/main.js'],
   output: {
-    path: __dirname + "/public",
-    filename: "bundle.js"
+    path: path.resolve('./public'),
+    filename: "bundle.js",
+    publicPath: publicPath
   },
   devServer: {
     contentBase: "./public",
@@ -33,6 +41,9 @@ module.exports = {
     ]
 },
 plugins: [
-  new webpack.BannerPlugin('This is created by Cathy')
+  new webpack.BannerPlugin('This is created by Cathy'),
+  new webpack.optimize.OccurrenceOrderPlugin(),
+  new webpack.HotModuleReplacementPlugin(),
+  new webpack.NoEmitOnErrorsPlugin()
 ],
 }

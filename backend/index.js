@@ -4,6 +4,19 @@ const PORT = 3000;
 let listName = ['a', 'b','c'];
 const cors = require('cors');
 
+var webpack = require('webpack'),
+    WebpackDevMiddleware = require('webpack-dev-middleware'),
+    WebpackHotMiddleware = require('webpack-hot-middleware')
+var webpackDevConfig = require('../webpack.config');
+
+var compiler = webpack(webpackDevConfig);
+
+// attach to the compiler & the server
+app.use(WebpackDevMiddleware(compiler, {
+  publicPath: webpackDevConfig.output.publicPath,
+  stats: { colors: true }
+}))
+app.use(WebpackHotMiddleware(compiler))
 app.use(cors());
 app.use(express.json());
 

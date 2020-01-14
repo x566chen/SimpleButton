@@ -4,7 +4,15 @@ function Buttons(){
     alert('this is add')
   }
   return (
-    <button onClick={handleClick} >Add</button>
+    <div>
+      <input ></input>
+      <button onClick={handleClick} >Add</button>
+      <button onClick={handleClick} >Add</button>    
+      <button onClick={handleClick} >Add</button>
+      <button onClick={handleClick} >Add</button>     
+    </div>
+    
+
   )
 }
 
